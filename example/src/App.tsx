@@ -1,10 +1,18 @@
 import React from 'react'
 
-import { ExampleComponent } from 'arcgis-js-api-react'
+import { Map, MapView, ImageryBasemap } from 'arcgis-js-api-react'
 import 'arcgis-js-api-react/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <div style={{ width: '400px', height: '400px' }}>
+      <MapView>
+        <Map>
+          <ImageryBasemap></ImageryBasemap>
+        </Map>
+      </MapView>
+    </div>
+  )
 }
 
 export default App
