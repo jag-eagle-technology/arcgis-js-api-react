@@ -12,6 +12,7 @@ export type MapCenterLocation = {
 interface IMapSceneView {
     center?: Point;
     zoom?: number;
+    camera?: __esri.Camera;
     children?: React.ReactNode;
     onMapClick?: __esri.MapViewClickEventHandler;
     type?: "2d" | "3d";
@@ -20,6 +21,7 @@ interface IMapSceneView {
 const MapSceneView: React.FC<IMapSceneView> = ({
     center: centerProp,
     zoom: zoomProp,
+    camera,
     children,
     onMapClick,
     type = "2d",
@@ -44,6 +46,7 @@ const MapSceneView: React.FC<IMapSceneView> = ({
             container: viewDivRef.current,
             center: centerProp || undefined,
             zoom: zoomProp || undefined,
+            camera: camera,
             spatialReference: {
                 wkid: 2193,
             },
@@ -57,6 +60,9 @@ const MapSceneView: React.FC<IMapSceneView> = ({
         viewRef.current.when(() => {
             centerProp && (viewRef.current!.center = centerProp);
             zoomProp && (viewRef.current!.zoom = zoomProp);
+            if (type == "3d") {
+                camera && ((viewRef.current as __esri.SceneView)!.camera = camera);
+            }
         });
         onMapClick && viewRef.current.on("click", onMapClick);
     };

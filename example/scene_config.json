@@ -1,0 +1,922 @@
+{
+    "operationalLayers": [
+        {
+            "id": "17308f2d019-layer-0",
+            "title": "NZ Imagery",
+            "url": "https://services1.arcgisonline.co.nz/arcgis/rest/services/Imagery/newzealand/MapServer",
+            "minScale": 80000,
+            "layerType": "ArcGISTiledMapServiceLayer"
+        },
+        {
+            "id": "1732c89b3b0-layer-0",
+            "title": "LINZ NZ Primary Parcels",
+            "url": "https://services7.arcgis.com/jI87xPT7G1AGV8Uo/arcgis/rest/services/LINZ_NZ_Primary_Parcels/FeatureServer/0",
+            "visibility": false,
+            "itemId": "840ef2a13a2a4f34b7895c9616638dee",
+            "layerType": "ArcGISFeatureLayer",
+            "layerDefinition": {
+                "elevationInfo": { "mode": "onTheGround" },
+                "drawingInfo": {
+                    "labelingInfo": [
+                        {
+                            "labelExpression": "[affected_surveys]",
+                            "labelExpressionInfo": {
+                                "expression": "$feature[\"affected_surveys\"]"
+                            },
+                            "symbol": {
+                                "type": "LabelSymbol3D",
+                                "symbolLayers": [
+                                    {
+                                        "type": "Text",
+                                        "halo": {
+                                            "color": [255, 255, 255],
+                                            "transparency": 70,
+                                            "size": 0.5
+                                        },
+                                        "material": { "color": [0, 0, 0] },
+                                        "size": 11
+                                    }
+                                ]
+                            },
+                            "useCodedValues": true
+                        }
+                    ],
+                    "renderer": {
+                        "authoringInfo": {},
+                        "type": "simple",
+                        "symbol": {
+                            "type": "PolygonSymbol3D",
+                            "symbolLayers": [
+                                {
+                                    "type": "Fill",
+                                    "material": { "colorMixMode": "replace" },
+                                    "outline": {
+                                        "color": [255, 255, 255],
+                                        "size": 0.75
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "showLabels": false,
+            "screenSizePerspective": true
+        },
+        {
+            "id": "1730da32709-layer-4",
+            "title": "LINZ NZ River Name Lines - Pilot",
+            "url": "https://services7.arcgis.com/jI87xPT7G1AGV8Uo/arcgis/rest/services/LINZ_NZ_River_Name_Lines_Pilot/FeatureServer/0",
+            "visibility": false,
+            "itemId": "bafb0e414bde45479e229798b1b8433d",
+            "layerType": "ArcGISFeatureLayer",
+            "screenSizePerspective": true
+        },
+        {
+            "id": "1730d3b6899-layer-2",
+            "title": "Farm Assets",
+            "layers": [
+                {
+                    "id": "17308f4f76f-layer-8",
+                    "title": "CastlepointStationBoundary",
+                    "url": "https://services.arcgis.com/hLRlshaEMEYQG5A8/arcgis/rest/services/Castlepoint_Station_WFL1/FeatureServer/5",
+                    "itemId": "cd04b8b3a1cd4b82801c263240bc7464",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "elevationInfo": { "mode": "onTheGround" },
+                        "drawingInfo": {
+                            "labelingInfo": [
+                                {
+                                    "labelExpression": "[country]",
+                                    "labelExpressionInfo": {
+                                        "expression": "$feature[\"country\"]"
+                                    },
+                                    "symbol": {
+                                        "type": "LabelSymbol3D",
+                                        "symbolLayers": [
+                                            {
+                                                "type": "Text",
+                                                "halo": {
+                                                    "color": [0, 0, 0],
+                                                    "transparency": 50,
+                                                    "size": 1
+                                                },
+                                                "material": {
+                                                    "color": [255, 255, 255]
+                                                },
+                                                "size": 11
+                                            }
+                                        ]
+                                    },
+                                    "useCodedValues": true
+                                }
+                            ],
+                            "renderer": {
+                                "authoringInfo": {},
+                                "type": "simple",
+                                "symbol": {
+                                    "type": "PolygonSymbol3D",
+                                    "symbolLayers": [
+                                        {
+                                            "type": "Fill",
+                                            "material": {
+                                                "color": [255, 85, 0],
+                                                "transparency": 100,
+                                                "colorMixMode": "replace"
+                                            },
+                                            "outline": {
+                                                "color": [255, 85, 0],
+                                                "size": 2.25
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "showLabels": false,
+                    "screenSizePerspective": true
+                },
+                {
+                    "id": "1732c5b927c-layer-0",
+                    "title": "Fencelines",
+                    "url": "https://services.arcgis.com/hLRlshaEMEYQG5A8/arcgis/rest/services/Fencelines/FeatureServer/0",
+                    "itemId": "5614dbda372b41f8be8954ce2970eaec",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "elevationInfo": {
+                            "mode": "relativeToGround",
+                            "offset": 1
+                        },
+                        "drawingInfo": {
+                            "renderer": {
+                                "authoringInfo": { "lengthUnit": "meters" },
+                                "type": "uniqueValue",
+                                "field1": "Status",
+                                "defaultLabel": "Other",
+                                "uniqueValueInfos": [
+                                    {
+                                        "label": "Existing",
+                                        "symbol": {
+                                            "type": "LineSymbol3D",
+                                            "symbolLayers": [
+                                                {
+                                                    "type": "Path",
+                                                    "material": {
+                                                        "color": [115, 76, 0]
+                                                    },
+                                                    "profile": "quad",
+                                                    "join": "bevel",
+                                                    "width": 0.30000000000000004,
+                                                    "height": 3,
+                                                    "anchor": "bottom",
+                                                    "profileRotation": "heading"
+                                                }
+                                            ]
+                                        },
+                                        "value": "0"
+                                    },
+                                    {
+                                        "label": "Proposed",
+                                        "symbol": {
+                                            "type": "LineSymbol3D",
+                                            "symbolLayers": [
+                                                {
+                                                    "type": "Path",
+                                                    "material": {
+                                                        "color": [152, 230, 0]
+                                                    },
+                                                    "profile": "quad",
+                                                    "join": "bevel",
+                                                    "width": 0.30000000000000004,
+                                                    "height": 3,
+                                                    "anchor": "bottom",
+                                                    "profileRotation": "heading"
+                                                }
+                                            ]
+                                        },
+                                        "value": "1"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "showLabels": false,
+                    "screenSizePerspective": true
+                },
+                {
+                    "id": "17308f4dd2a-layer-1",
+                    "title": "Castlepoint Farm Tree Points",
+                    "url": "https://services.arcgis.com/hLRlshaEMEYQG5A8/arcgis/rest/services/Castlepoint_Farm_Tree_Points/FeatureServer/0",
+                    "itemId": "5be78f49a1dd4fe4b3b394110f67f5c5",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "elevationInfo": { "mode": "relativeToGround" },
+                        "drawingInfo": {
+                            "labelingInfo": [
+                                {
+                                    "labelExpression": "[CID]",
+                                    "labelExpressionInfo": {
+                                        "expression": "$feature[\"CID\"]"
+                                    },
+                                    "labelPlacement": "esriServerPointLabelPlacementAboveCenter",
+                                    "symbol": {
+                                        "type": "LabelSymbol3D",
+                                        "symbolLayers": [
+                                            {
+                                                "type": "Text",
+                                                "halo": {
+                                                    "color": [255, 255, 255],
+                                                    "transparency": 70,
+                                                    "size": 0.5
+                                                },
+                                                "material": {
+                                                    "color": [0, 0, 0]
+                                                },
+                                                "size": 11
+                                            }
+                                        ]
+                                    },
+                                    "useCodedValues": true
+                                }
+                            ],
+                            "renderer": {
+                                "authoringInfo": { "lengthUnit": "meters" },
+                                "type": "simple",
+                                "symbol": {
+                                    "type": "PointSymbol3D",
+                                    "symbolLayers": [
+                                        {
+                                            "type": "Object",
+                                            "material": {
+                                                "color": [67, 86, 93]
+                                            },
+                                            "resource": {
+                                                "href": "https://static.arcgis.com/arcgis/styleItems/ThematicTrees/gltf/resource/SassafrasAlbidum.glb"
+                                            },
+                                            "height": 15.480001449584961
+                                        }
+                                    ],
+                                    "styleOrigin": {
+                                        "styleName": "EsriThematicTreesStyle",
+                                        "name": "Sassafras"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "showLabels": false,
+                    "screenSizePerspective": false
+                },
+                {
+                    "id": "17308f55ded-layer-14",
+                    "title": "LINZ NZ Building Outlines",
+                    "url": "https://services7.arcgis.com/jI87xPT7G1AGV8Uo/arcgis/rest/services/LINZ_NZ_Building_Outlines/FeatureServer/0",
+                    "itemId": "c2e9e61f55a245978c0bd64558553101",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "elevationInfo": { "mode": "onTheGround" },
+                        "drawingInfo": {
+                            "labelingInfo": [
+                                {
+                                    "labelExpression": "[name]",
+                                    "labelExpressionInfo": {
+                                        "expression": "$feature[\"name\"]"
+                                    },
+                                    "symbol": {
+                                        "type": "LabelSymbol3D",
+                                        "symbolLayers": [
+                                            {
+                                                "type": "Text",
+                                                "halo": {
+                                                    "color": [255, 255, 255],
+                                                    "transparency": 70,
+                                                    "size": 0.5
+                                                },
+                                                "material": {
+                                                    "color": [0, 0, 0]
+                                                },
+                                                "size": 11
+                                            }
+                                        ]
+                                    },
+                                    "useCodedValues": true
+                                }
+                            ],
+                            "renderer": {
+                                "authoringInfo": { "lengthUnit": "meters" },
+                                "type": "simple",
+                                "symbol": {
+                                    "type": "PolygonSymbol3D",
+                                    "symbolLayers": [
+                                        {
+                                            "type": "Extrude",
+                                            "size": 3,
+                                            "material": {
+                                                "color": [214, 214, 214]
+                                            },
+                                            "edges": {
+                                                "type": "solid",
+                                                "color": [0, 0, 0],
+                                                "transparency": 35,
+                                                "size": 1
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "showLabels": false,
+                    "screenSizePerspective": false
+                },
+                {
+                    "id": "1732c77ae8b-layer-1",
+                    "title": "Gates",
+                    "url": "https://services.arcgis.com/hLRlshaEMEYQG5A8/arcgis/rest/services/Castlepoint_Station_QuickCapture/FeatureServer/0",
+                    "itemId": "b5f7487e4d354a4ea57f52c6456eeae5",
+                    "layerType": "ArcGISFeatureLayer",
+                    "screenSizePerspective": true
+                },
+                {
+                    "id": "17308f4f768-layer-4",
+                    "title": "Tanks",
+                    "url": "https://services.arcgis.com/hLRlshaEMEYQG5A8/arcgis/rest/services/Castlepoint_Station_WFL1/FeatureServer/1",
+                    "itemId": "cd04b8b3a1cd4b82801c263240bc7464",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "elevationInfo": { "mode": "relativeToGround" },
+                        "drawingInfo": {
+                            "labelingInfo": [
+                                {
+                                    "labelExpression": "[Creator]",
+                                    "labelExpressionInfo": {
+                                        "expression": "$feature[\"Creator\"]"
+                                    },
+                                    "labelPlacement": "esriServerPointLabelPlacementAboveCenter",
+                                    "symbol": {
+                                        "type": "LabelSymbol3D",
+                                        "symbolLayers": [
+                                            {
+                                                "type": "Text",
+                                                "halo": {
+                                                    "color": [255, 255, 255],
+                                                    "transparency": 70,
+                                                    "size": 0.5
+                                                },
+                                                "material": {
+                                                    "color": [0, 0, 0]
+                                                },
+                                                "size": 11
+                                            }
+                                        ]
+                                    },
+                                    "useCodedValues": true
+                                }
+                            ],
+                            "renderer": {
+                                "authoringInfo": {},
+                                "type": "simple",
+                                "symbol": {
+                                    "type": "PointSymbol3D",
+                                    "symbolLayers": [
+                                        {
+                                            "type": "Icon",
+                                            "material": {
+                                                "color": [255, 255, 255]
+                                            },
+                                            "resource": {
+                                                "dataURI": "data:image/png;base64,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"
+                                            },
+                                            "size": 22.5
+                                        }
+                                    ],
+                                    "verticalOffset": {
+                                        "screenLength": 40,
+                                        "maxWorldLength": 500000
+                                    },
+                                    "callout": {
+                                        "type": "line",
+                                        "color": [255, 255, 255],
+                                        "size": 0.75
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "showLabels": false,
+                    "screenSizePerspective": false
+                },
+                {
+                    "id": "17308f4f766-layer-3",
+                    "title": "CastlepointStockyards",
+                    "url": "https://services.arcgis.com/hLRlshaEMEYQG5A8/arcgis/rest/services/Castlepoint_Station_WFL1/FeatureServer/0",
+                    "itemId": "cd04b8b3a1cd4b82801c263240bc7464",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "elevationInfo": { "mode": "relativeToGround" },
+                        "drawingInfo": {
+                            "labelingInfo": [
+                                {
+                                    "labelExpression": "[Creator]",
+                                    "labelExpressionInfo": {
+                                        "expression": "$feature[\"Creator\"]"
+                                    },
+                                    "labelPlacement": "esriServerPointLabelPlacementAboveCenter",
+                                    "symbol": {
+                                        "type": "LabelSymbol3D",
+                                        "symbolLayers": [
+                                            {
+                                                "type": "Text",
+                                                "halo": {
+                                                    "color": [0, 0, 0],
+                                                    "transparency": 50,
+                                                    "size": 1
+                                                },
+                                                "material": {
+                                                    "color": [255, 255, 255]
+                                                },
+                                                "size": 11
+                                            }
+                                        ]
+                                    },
+                                    "useCodedValues": true
+                                }
+                            ],
+                            "renderer": {
+                                "authoringInfo": {},
+                                "type": "simple",
+                                "symbol": {
+                                    "type": "PointSymbol3D",
+                                    "symbolLayers": [
+                                        {
+                                            "type": "Icon",
+                                            "material": {
+                                                "color": [255, 255, 255]
+                                            },
+                                            "resource": {
+                                                "dataURI": "data:image/png;base64,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"
+                                            },
+                                            "size": 22.5
+                                        }
+                                    ],
+                                    "verticalOffset": {
+                                        "screenLength": 40,
+                                        "maxWorldLength": 500000
+                                    },
+                                    "callout": {
+                                        "type": "line",
+                                        "color": [255, 255, 255],
+                                        "size": 0.75
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "showLabels": false,
+                    "screenSizePerspective": false
+                },
+                {
+                    "id": "17309026e06-layer-17",
+                    "title": "Farm Troughs",
+                    "url": "https://services.arcgis.com/hLRlshaEMEYQG5A8/arcgis/rest/services/Farm_Troughs/FeatureServer/0",
+                    "itemId": "67558a4b810f4b839d59249fb5e4d055",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "minScale": 28000,
+                        "elevationInfo": { "mode": "relativeToGround" },
+                        "drawingInfo": {
+                            "labelingInfo": [
+                                {
+                                    "labelExpression": "[OBJECTID]",
+                                    "labelExpressionInfo": {
+                                        "expression": "$feature[\"OBJECTID\"]"
+                                    },
+                                    "labelPlacement": "esriServerPointLabelPlacementAboveCenter",
+                                    "symbol": {
+                                        "type": "LabelSymbol3D",
+                                        "symbolLayers": [
+                                            {
+                                                "type": "Text",
+                                                "halo": {
+                                                    "color": [255, 255, 255],
+                                                    "transparency": 70,
+                                                    "size": 0.5
+                                                },
+                                                "material": {
+                                                    "color": [0, 0, 0]
+                                                },
+                                                "size": 11
+                                            }
+                                        ]
+                                    },
+                                    "useCodedValues": true
+                                }
+                            ],
+                            "renderer": {
+                                "authoringInfo": {},
+                                "type": "simple",
+                                "symbol": {
+                                    "type": "PointSymbol3D",
+                                    "symbolLayers": [
+                                        {
+                                            "type": "Icon",
+                                            "material": {
+                                                "color": [255, 255, 255]
+                                            },
+                                            "resource": {
+                                                "dataURI": "data:image/png;base64,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"
+                                            },
+                                            "size": 11.25
+                                        }
+                                    ],
+                                    "verticalOffset": {
+                                        "screenLength": 40,
+                                        "maxWorldLength": 500000
+                                    },
+                                    "callout": {
+                                        "type": "line",
+                                        "color": [255, 255, 255],
+                                        "size": 0.75
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "showLabels": false,
+                    "screenSizePerspective": false
+                }
+            ],
+            "layerType": "GroupLayer"
+        }
+    ],
+    "baseMap": {
+        "baseMapLayers": [],
+        "id": "1730d1a2375-basemap-31",
+        "title": "No basemap",
+        "elevationLayers": [
+            {
+                "id": "17308f5a32f-layer-16",
+                "listMode": "show",
+                "title": "Aotearoa New Zealand Elevation - Alpha",
+                "url": "https://services1.arcgisonline.co.nz/arcgis/rest/services/Elevation/New_Zealand_Elevation/ImageServer",
+                "itemId": "2ce4fe7d77024e719f8a04d2155b3fd2",
+                "layerType": "ArcGISTiledElevationServiceLayer"
+            }
+        ]
+    },
+    "ground": {
+        "layers": [
+            {
+                "id": "17308f5a32f-layer-16",
+                "listMode": "show",
+                "title": "Aotearoa New Zealand Elevation - Alpha",
+                "url": "https://services1.arcgisonline.co.nz/arcgis/rest/services/Elevation/New_Zealand_Elevation/ImageServer",
+                "itemId": "2ce4fe7d77024e719f8a04d2155b3fd2",
+                "layerType": "ArcGISTiledElevationServiceLayer"
+            }
+        ],
+        "transparency": 100,
+        "navigationConstraint": { "type": "stayAbove" }
+    },
+    "clippingArea": {
+        "geometry": {
+            "spatialReference": { "latestWkid": 2193, "wkid": 2193 },
+            "xmin": 1847523.328832654,
+            "ymin": 5453945.893840776,
+            "xmax": 1885309.3081105452,
+            "ymax": 5475467.686979548
+        },
+        "clip": true
+    },
+    "heightModelInfo": {
+        "heightModel": "gravity_related_height",
+        "heightUnit": "meter"
+    },
+    "version": "1.20",
+    "authoringApp": "WebSceneViewer",
+    "authoringAppVersion": "8.2.0.0",
+    "presentation": {
+        "slides": [
+            {
+                "id": "173090411a4-slide-1",
+                "title": { "text": "Home" },
+                "thumbnail": {
+                    "url": "data:image/jpeg;base64,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"
+                },
+                "viewpoint": {
+                    "camera": {
+                        "position": {
+                            "spatialReference": {
+                                "latestWkid": 2193,
+                                "wkid": 2193
+                            },
+                            "x": 1866416.3184715996,
+                            "y": 5464058.291980932,
+                            "z": 25084.720281642603
+                        },
+                        "heading": 0,
+                        "tilt": 1.4810921149520746
+                    }
+                },
+                "baseMap": {
+                    "baseMapLayers": [],
+                    "id": "1730d1a2375-basemap-31",
+                    "title": "No basemap"
+                },
+                "ground": { "transparency": 100 },
+                "visibleLayers": [
+                    { "id": "17308f2d019-layer-0" },
+                    { "id": "1730d3b6899-layer-2" },
+                    { "id": "17308f4f76f-layer-8" },
+                    { "id": "1732c5b927c-layer-0" },
+                    { "id": "17308f4dd2a-layer-1" },
+                    { "id": "17308f55ded-layer-14" },
+                    { "id": "1732c77ae8b-layer-1" },
+                    { "id": "17308f4f768-layer-4" },
+                    { "id": "17308f4f766-layer-3" },
+                    { "id": "17309026e06-layer-17" },
+                    { "id": "17308f5a32f-layer-16" }
+                ],
+                "environment": {
+                    "lighting": {
+                        "datetime": 1579041900000,
+                        "directShadows": true,
+                        "displayUTCOffset": 12
+                    }
+                }
+            },
+            {
+                "id": "173213ee41c-slide-6",
+                "title": { "text": "3D" },
+                "thumbnail": {
+                    "url": "data:image/jpeg;base64,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"
+                },
+                "viewpoint": {
+                    "camera": {
+                        "position": {
+                            "spatialReference": {
+                                "latestWkid": 2193,
+                                "wkid": 2193
+                            },
+                            "x": 1863393.751090786,
+                            "y": 5458104.437609018,
+                            "z": 1629.8715870066753
+                        },
+                        "heading": 13.160128432550689,
+                        "tilt": 74.80582453668673
+                    }
+                },
+                "baseMap": {
+                    "baseMapLayers": [],
+                    "id": "1730d1a2375-basemap-31",
+                    "title": "No basemap"
+                },
+                "ground": { "transparency": 100 },
+                "visibleLayers": [
+                    { "id": "17308f2d019-layer-0" },
+                    { "id": "1730da32709-layer-4" },
+                    { "id": "1730d3b6899-layer-2" },
+                    { "id": "17308f4f76f-layer-8" },
+                    { "id": "1732c5b927c-layer-0" },
+                    { "id": "17308f4dd2a-layer-1" },
+                    { "id": "17308f55ded-layer-14" },
+                    { "id": "1732c77ae8b-layer-1" },
+                    { "id": "17308f4f768-layer-4" },
+                    { "id": "17308f4f766-layer-3" },
+                    { "id": "17309026e06-layer-17" },
+                    { "id": "17308f5a32f-layer-16" }
+                ],
+                "environment": {
+                    "lighting": {
+                        "datetime": 1579041900000,
+                        "directShadows": true,
+                        "displayUTCOffset": 12
+                    }
+                }
+            },
+            {
+                "id": "1730cddfee4-slide-3",
+                "title": { "text": "New Fence" },
+                "thumbnail": {
+                    "url": "data:image/jpeg;base64,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"
+                },
+                "viewpoint": {
+                    "camera": {
+                        "position": {
+                            "spatialReference": {
+                                "latestWkid": 2193,
+                                "wkid": 2193
+                            },
+                            "x": 1865597.8097169746,
+                            "y": 5462010.696275757,
+                            "z": 156.3710483603135
+                        },
+                        "heading": 338.09498156568566,
+                        "tilt": 65.30840265279122
+                    }
+                },
+                "baseMap": {
+                    "baseMapLayers": [],
+                    "id": "1730d1a2375-basemap-31",
+                    "title": "No basemap"
+                },
+                "ground": { "transparency": 100 },
+                "visibleLayers": [
+                    { "id": "17308f2d019-layer-0" },
+                    { "id": "1730da32709-layer-4" },
+                    { "id": "1730d3b6899-layer-2" },
+                    { "id": "17308f4f76f-layer-8" },
+                    { "id": "1732c5b927c-layer-0" },
+                    { "id": "17308f4dd2a-layer-1" },
+                    { "id": "17308f55ded-layer-14" },
+                    { "id": "1732c77ae8b-layer-1" },
+                    { "id": "17308f4f768-layer-4" },
+                    { "id": "17308f4f766-layer-3" },
+                    { "id": "17309026e06-layer-17" },
+                    { "id": "17308f5a32f-layer-16" }
+                ],
+                "environment": {
+                    "lighting": {
+                        "datetime": 1579041900000,
+                        "directShadows": true,
+                        "displayUTCOffset": 12
+                    }
+                }
+            },
+            {
+                "id": "17309019546-slide-0",
+                "title": { "text": "3D Farm" },
+                "thumbnail": {
+                    "url": "data:image/jpeg;base64,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"
+                },
+                "viewpoint": {
+                    "camera": {
+                        "position": {
+                            "spatialReference": {
+                                "latestWkid": 2193,
+                                "wkid": 2193
+                            },
+                            "x": 1865257.4200355525,
+                            "y": 5463088.48159886,
+                            "z": 333.0447312342303
+                        },
+                        "heading": 130.42426792927222,
+                        "tilt": 60.206723655306
+                    }
+                },
+                "baseMap": {
+                    "baseMapLayers": [],
+                    "id": "1730d1a2375-basemap-31",
+                    "title": "No basemap"
+                },
+                "ground": { "transparency": 100 },
+                "visibleLayers": [
+                    { "id": "17308f2d019-layer-0" },
+                    { "id": "1730da32709-layer-4" },
+                    { "id": "1730d3b6899-layer-2" },
+                    { "id": "17308f4f76f-layer-8" },
+                    { "id": "1732c5b927c-layer-0" },
+                    { "id": "17308f4dd2a-layer-1" },
+                    { "id": "17308f55ded-layer-14" },
+                    { "id": "1732c77ae8b-layer-1" },
+                    { "id": "17308f4f768-layer-4" },
+                    { "id": "17308f4f766-layer-3" },
+                    { "id": "17309026e06-layer-17" },
+                    { "id": "17308f5a32f-layer-16" }
+                ],
+                "environment": {
+                    "lighting": {
+                        "datetime": 1579041900000,
+                        "directShadows": true,
+                        "displayUTCOffset": 12
+                    }
+                }
+            },
+            {
+                "id": "1730da6b777-slide-6",
+                "title": { "text": "Measure Slope" },
+                "thumbnail": {
+                    "url": "data:image/jpeg;base64,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"
+                },
+                "viewpoint": {
+                    "camera": {
+                        "position": {
+                            "spatialReference": {
+                                "latestWkid": 2193,
+                                "wkid": 2193
+                            },
+                            "x": 1869687.6581943491,
+                            "y": 5468105.264980798,
+                            "z": 105.74045506515716
+                        },
+                        "heading": 342.118352298711,
+                        "tilt": 75.51176064835792
+                    }
+                },
+                "baseMap": {
+                    "baseMapLayers": [],
+                    "id": "1730d1a2375-basemap-31",
+                    "title": "No basemap"
+                },
+                "ground": { "transparency": 100 },
+                "visibleLayers": [
+                    { "id": "17308f2d019-layer-0" },
+                    { "id": "1730da32709-layer-4" },
+                    { "id": "1730d3b6899-layer-2" },
+                    { "id": "17308f4f76f-layer-8" },
+                    { "id": "1732c5b927c-layer-0" },
+                    { "id": "17308f4dd2a-layer-1" },
+                    { "id": "17308f55ded-layer-14" },
+                    { "id": "1732c77ae8b-layer-1" },
+                    { "id": "17308f4f768-layer-4" },
+                    { "id": "17308f4f766-layer-3" },
+                    { "id": "17309026e06-layer-17" },
+                    { "id": "17308f5a32f-layer-16" }
+                ],
+                "environment": {
+                    "lighting": {
+                        "datetime": 1579041900000,
+                        "directShadows": true,
+                        "displayUTCOffset": 12
+                    }
+                }
+            },
+            {
+                "id": "173090815cc-slide-2",
+                "title": { "text": "Castlepoint" },
+                "thumbnail": {
+                    "url": "data:image/jpeg;base64,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"
+                },
+                "viewpoint": {
+                    "camera": {
+                        "position": {
+                            "spatialReference": {
+                                "latestWkid": 2193,
+                                "wkid": 2193
+                            },
+                            "x": 1872010.6572719174,
+                            "y": 5468500.143823056,
+                            "z": 708.1509726011559
+                        },
+                        "heading": 188.5597026530127,
+                        "tilt": 66.23317170173233
+                    }
+                },
+                "baseMap": {
+                    "baseMapLayers": [],
+                    "id": "1730d1a2375-basemap-31",
+                    "title": "No basemap"
+                },
+                "ground": { "transparency": 100 },
+                "visibleLayers": [
+                    { "id": "17308f2d019-layer-0" },
+                    { "id": "1730da32709-layer-4" },
+                    { "id": "1730d3b6899-layer-2" },
+                    { "id": "17308f4f76f-layer-8" },
+                    { "id": "1732c5b927c-layer-0" },
+                    { "id": "17308f4dd2a-layer-1" },
+                    { "id": "17308f55ded-layer-14" },
+                    { "id": "1732c77ae8b-layer-1" },
+                    { "id": "17308f4f768-layer-4" },
+                    { "id": "17308f4f766-layer-3" },
+                    { "id": "17309026e06-layer-17" },
+                    { "id": "17308f5a32f-layer-16" }
+                ],
+                "environment": {
+                    "lighting": {
+                        "datetime": 1579041900000,
+                        "directShadows": true,
+                        "displayUTCOffset": 12
+                    }
+                }
+            }
+        ]
+    },
+    "initialState": {
+        "environment": {
+            "lighting": {
+                "datetime": 1579041900000,
+                "directShadows": true,
+                "displayUTCOffset": 12
+            },
+            "background": { "type": "color", "color": [255, 255, 255] },
+            "atmosphereEnabled": false,
+            "starsEnabled": false
+        },
+        "viewpoint": {
+            "camera": {
+                "position": {
+                    "spatialReference": { "latestWkid": 2193, "wkid": 2193 },
+                    "x": 1866416.3184715996,
+                    "y": 5464058.291980932,
+                    "z": 25084.720281642603
+                },
+                "heading": 0,
+                "tilt": 1.4810921149503518
+            }
+        }
+    },
+    "spatialReference": { "latestWkid": 2193, "wkid": 2193 },
+    "viewingMode": "local"
+}

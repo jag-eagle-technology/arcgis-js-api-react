@@ -2,7 +2,7 @@ import React from "react";
 import Map from "@arcgis/core/Map";
 import Point from "@arcgis/core/geometry/Point";
 import APIMapView from "@arcgis/core/views/MapView";
-import {whenTrue} from '@arcgis/core/core/watchUtils';
+import { whenTrue } from "@arcgis/core/core/watchUtils";
 export type MapCenterLocation = {
     lat: number;
     lon: number;
@@ -51,7 +51,7 @@ const MapView: React.FC<IMapView> = ({
         onMapClick && view.on("click", onMapClick);
         // add listener to update mapview center
         // view.watch('stationary')
-        whenTrue(view, 'stationary', () => {
+        whenTrue(view, "stationary", () => {
             // console.log('mapview is stationary', mapView.center, mapView.zoom);
 
             if (view.zoom === -1) {
@@ -91,7 +91,7 @@ const MapView: React.FC<IMapView> = ({
             ></div>
             {React.Children.map(children, (child) => {
                 return React.cloneElement(child as React.ReactElement<any>, {
-                    mapView,
+                    view: mapView,
                 });
             })}
         </div>

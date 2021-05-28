@@ -8,29 +8,43 @@ interface IFeatureLayer {
     // optional function that will take the layer as an input for further usage
     setLayer?: (layer: APIFeatureLayer) => void;
     renderer?: __esri.RendererProperties;
+    id?: string;
+    properties?: __esri.FeatureLayerProperties;
 }
 const FeatureLayer: React.FC<IFeatureLayer> = ({
     map,
     url,
     setLayer,
     renderer,
+    id,
+    properties,
 }) => {
+    const featureLayerRef = React.useRef<APIFeatureLayer>();
     const initFeatureLayer = () => {
         if (!map) {
             throw new Error("no map set on basemap component");
         }
         const featureLayer = new APIFeatureLayer({
             url,
-            ...(renderer && {renderer: renderer}),
+            ...(renderer && { renderer }),
+            ...(id && { id }),
+            ...(properties && { properties }),
         });
         map.add(featureLayer);
         setLayer && setLayer(featureLayer);
+    };
+    const removeFeatureLayer = () => {
+        if (featureLayerRef.current) {
+            featureLayerRef.current.destroy();
+            featureLayerRef.current = undefined;
+        }
     };
     useEffect(() => {
         if (map) {
             initFeatureLayer();
         }
-    }, [map]);
+        return () => removeFeatureLayer();
+    }, [map, url, setLayer, renderer, id, properties]);
     return <></>;
 };
 

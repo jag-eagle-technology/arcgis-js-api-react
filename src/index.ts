@@ -29,10 +29,18 @@
 // export const  = ArcGISJSAPIReact.MapView;
 // export const  = ArcGISJSAPIReact.Search;
 
-export {default as FeatureLayer} from './FeatureLayer';
-export {default as Locate} from './Locate';
-export {default as Map} from './Map';
-export {default as MapSceneView} from './MapSceneView';
-export {default as MapView} from './MapView';
-export {default as Search} from './Search';
-export {default as Basemap} from './BaseMap';
+export { default as FeatureLayer } from "./FeatureLayer";
+export { default as Locate } from "./Locate";
+export { default as Map } from "./Map";
+export { default as MapSceneView } from "./MapSceneView";
+export { default as MapView } from "./MapView";
+export { default as SceneView } from "./SceneView";
+export { default as Search } from "./Search";
+export { default as Basemap } from "./BaseMap";
+export { default as ElevationLayer } from "./ElevationLayer";
+export { default as ImageryTileLayer } from "./ImageryTileLayer";
+export { default as MapImageLayer } from "./MapImageLayer";
+export { default as VectorTileLayer } from "./VectorTileLayer";
+export { default as TileLayer } from "./TileLayer";
+export { default as ElevationProfile } from "./ElevationProfile";
+export { default as SketchWidget } from "./SketchWidget";

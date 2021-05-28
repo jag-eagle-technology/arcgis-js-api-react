@@ -10,11 +10,12 @@
     "@types/node": "link:../node_modules/@types/node",
     "@types/react": "link:../node_modules/@types/react",
     "@types/react-dom": "link:../node_modules/@types/react-dom",
+    "arcgis-js-api-react": "link:../",
+    "@arcgis/core": "link:../node_modules/@arcgis/core",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
     "typescript": "link:../node_modules/typescript",
-    "arcgis-js-api-react": "link:../",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -40,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.3.0"
   }
 }
