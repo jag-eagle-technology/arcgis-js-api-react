@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { MapView, Map, Basemap } from "arcgis-js-api-react";
 
-import { Map, MapView, ImageryBasemap } from 'arcgis-js-api-react'
-import 'arcgis-js-api-react/dist/index.css'
-
-const App = () => {
+const App: React.FC = () => {
   return (
-    <div style={{ width: '400px', height: '400px' }}>
+    <div style={{ height: "400px", width: "600px" }}>
       <MapView>
         <Map>
-          <ImageryBasemap></ImageryBasemap>
+          <Basemap></Basemap>
         </Map>
       </MapView>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
