@@ -1,6 +1,6 @@
 {
   "name": "@jag-eagle-technology/arcis-js-api-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React wrapper for the Esri. ArcGIS Api for JavaScript",
   "keywords": [],
   "author": {
